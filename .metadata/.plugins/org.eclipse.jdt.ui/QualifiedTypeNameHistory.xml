@@ -23,4 +23,11 @@
     <fullyQualifiedTypeName name="java.util.Optional"/>
     <fullyQualifiedTypeName name="com.staffsync.model.Employee"/>
     <fullyQualifiedTypeName name="com.staffsync.repository.EmployeeRepository"/>
+    <fullyQualifiedTypeName name="com.staffsync.model.Admin"/>
+    <fullyQualifiedTypeName name="com.staffsync.repository.AdminRepository"/>
+    <fullyQualifiedTypeName name="com.staffsync.repository.AttendanceRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+    <fullyQualifiedTypeName name="com.staffsync.service.SuperAdminReportsService"/>
+    <fullyQualifiedTypeName name="org.springframework.format.annotation.DateTimeFormat"/>
+    <fullyQualifiedTypeName name="org.springframework.scheduling.annotation.EnableScheduling"/>
 </qualifiedTypeNameHistroy>

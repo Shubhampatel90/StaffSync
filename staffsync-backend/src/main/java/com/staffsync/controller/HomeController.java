@@ -32,15 +32,7 @@ public class HomeController {
         return "StaffSync Backend is running successfully!";
     }
 
-    // ============================================================
-    // HEALTH
-    // ============================================================
-
-    @GetMapping("/api/health")
-    public String health() {
-        return "StaffSync API is healthy!";
-    }
-
+    // ===========================================================
     // ============================================================
     // LOGIN
     // ============================================================
@@ -60,17 +52,6 @@ public class HomeController {
         // ========================================================
 
         Map<String, Object> response = new HashMap<>();
-
-        // ========================================================
-        // ADMIN LOGIN
-        // ========================================================
-
-        if ("admin".equals(email) && "1234".equals(password)) {
-
-            response.put("role", "ADMIN");
-
-            return ResponseEntity.ok(response);
-        }
 
         // ========================================================
         // EMPLOYEE LOGIN

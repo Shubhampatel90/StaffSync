@@ -35,89 +35,65 @@ class ApiService {
   // LOGIN
   // ============================================================
 
+
   static Future<Map<String, dynamic>> login(
       String email,
       String password,
       ) async {
+    final uri = Uri.parse('$baseUrl/api/auth/login');
+
     try {
       final response = await http.post(
-        Uri.parse("$baseUrl/api/auth/login"),
+        uri,
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
         body: jsonEncode({
-          "email": email,
-          "password": password,
+          'email': email.trim(),
+          'password': password,
         }),
       );
 
-      print("Login Status: ${response.statusCode}");
-      print("Login Response: ${response.body}");
-
-      // ========================================================
-      // SUCCESS
-      // ========================================================
+      print('Login URL: $uri');
+      print('Login Status: ${response.statusCode}');
+      print('Login Response: ${response.body}');
 
       if (response.statusCode == 200) {
         final dynamic data = jsonDecode(response.body);
-
-        // ------------------------------------------------------
-        // BACKEND RETURNS JSON OBJECT
-        //
-        // Example:
-        // {
-        //   "role": "EMPLOYEE",
-        //   "employeeId": 5
-        // }
-        // ------------------------------------------------------
 
         if (data is Map<String, dynamic>) {
           return data;
         }
 
-        // ------------------------------------------------------
-        // BACKEND RETURNS ONLY STRING
-        //
-        // Example:
-        // "EMPLOYEE"
-        // ------------------------------------------------------
-
         if (data is String) {
-          return {
-            "role": data,
-          };
+          return {'role': data};
         }
 
-        return {
-          "role": "ERROR",
-        };
+        throw Exception('Invalid login response format.');
       }
-
-      // ========================================================
-      // INVALID LOGIN
-      // ========================================================
 
       if (response.statusCode == 401) {
-        return {
-          "role": "INVALID",
-        };
+        return {'role': 'INVALID'};
       }
 
-      // ========================================================
-      // OTHER SERVER ERROR
-      // ========================================================
+      if (response.statusCode == 403) {
+        throw Exception(
+          'Login forbidden (403). Check Spring Security '
+              'rules and the /api/auth/login endpoint.',
+        );
+      }
 
-      return {
-        "role": "ERROR",
-      };
+      throw Exception(
+        'Login failed: HTTP ${response.statusCode}. '
+            'Response: ${response.body}',
+      );
     } catch (e) {
-      print("Login Error: $e");
-
-      return {
-        "role": "ERROR",
-      };
+      print('Login Error: $e');
+      rethrow;
     }
   }
+
 
   // ============================================================
   // GET EMPLOYEE PROFILE

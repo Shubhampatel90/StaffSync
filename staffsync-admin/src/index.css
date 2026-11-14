@@ -1,0 +1,305 @@
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 145%;
+  letter-spacing: 0.18px;
+
+  color: var(--text);
+  background: var(--bg);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------
+   GLOBAL RESET
+-------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+
+  overflow-x: hidden;
+  background: var(--bg);
+}
+
+body {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  min-height: 100svh;
+
+  margin: 0;
+  padding: 0;
+
+  background: var(--bg);
+  color: var(--text);
+
+  overflow-x: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+/* --------------------------------------------------
+   ROOT
+-------------------------------------------------- */
+
+#root {
+  width: 100%;
+  max-width: 1126px;
+
+  min-height: 100vh;
+  min-height: 100svh;
+
+  margin: 0 auto;
+  padding: 0;
+
+  text-align: center;
+
+  border-inline: 1px solid var(--border);
+
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+
+  overflow-x: hidden;
+}
+
+/* --------------------------------------------------
+   HEADINGS
+-------------------------------------------------- */
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  line-height: 110%;
+  letter-spacing: -1.68px;
+
+  margin: 32px 0;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+
+  margin: 0 0 8px;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-h);
+  font-family: var(--heading);
+}
+
+p {
+  margin: 0;
+}
+
+/* --------------------------------------------------
+   CODE
+-------------------------------------------------- */
+
+code,
+.counter {
+  font-family: var(--mono);
+
+  display: inline-flex;
+
+  border-radius: 4px;
+
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+
+  padding: 4px 8px;
+
+  background: var(--code-bg);
+}
+
+/* --------------------------------------------------
+   TABLET
+-------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  :root {
+    font-size: 15px;
+  }
+
+  #root {
+    width: 100%;
+    max-width: 100%;
+
+    border-inline: none;
+  }
+
+  h1 {
+    font-size: 38px;
+    letter-spacing: -1px;
+    margin: 24px 0;
+  }
+
+  h2 {
+    font-size: 21px;
+  }
+}
+
+/* --------------------------------------------------
+   MOBILE
+-------------------------------------------------- */
+
+@media (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+
+  body {
+    min-width: 320px;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100svh;
+
+    border: none;
+  }
+
+  h1 {
+    font-size: 32px;
+    line-height: 115%;
+
+    letter-spacing: -0.7px;
+
+    margin: 20px 0;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  code {
+    font-size: 13px;
+  }
+}
+
+/* --------------------------------------------------
+   SMALL MOBILE
+-------------------------------------------------- */
+
+@media (max-width: 480px) {
+  :root {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+}
+
+/* --------------------------------------------------
+   DARK MODE
+-------------------------------------------------- */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+
+    --social-bg: rgba(47, 48, 58, 0.5);
+
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px,
+      rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+/* --------------------------------------------------
+   DESKTOP LARGE SCREENS
+-------------------------------------------------- */
+
+@media (min-width: 1440px) {
+  #root {
+    max-width: 100%;
+  }
+}
+
+/* --------------------------------------------------
+   VERY LARGE SCREENS
+-------------------------------------------------- */
+
+@media (min-width: 1920px) {
+  #root {
+    max-width: 1440px;
+  }
+}
