@@ -30,7 +30,7 @@ const COLORS = {
   white: "#FFFFFF",
 };
 
-  const API_BASE_URL = "http://localhost:8080";
+  const API_BASE_URL = "https://staffsync-w6wn.onrender.com";
 
 function Dashboard() {
   const [dashboard, setDashboard] = useState(null);

@@ -46,7 +46,7 @@ import {
   Shield,
 } from "@mui/icons-material";
 
-const API_BASE_URL = "http://localhost:8080";
+const API_BASE_URL = "https://staffsync-w6wn.onrender.com";
 
 export default function AdminManagement() {
   const theme = useTheme();

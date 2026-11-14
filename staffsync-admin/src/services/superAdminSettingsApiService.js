@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:8080";
+const API_BASE_URL = "https://staffsync-w6wn.onrender.com";
 
 export const getSuperAdminSettings = async () => {
   const response = await fetch(

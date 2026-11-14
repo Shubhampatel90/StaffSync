@@ -51,7 +51,7 @@ function Login() {
 
     try {
       const response = await fetch(
-        "http://localhost:8080/api/admin/login",
+        "https://staffsync-w6wn.onrender.com/api/admin/login",
         {
           method: "POST",
 

@@ -84,7 +84,7 @@ function Contact() {
     console.log("SENDING REQUEST TO BACKEND...");
 
     const response = await fetch(
-      "http://localhost:8080/api/contact",
+      "https://staffsync-w6wn.onrender.com/api/contact",
       {
         method: "POST",
         headers: {

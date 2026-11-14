@@ -86,7 +86,7 @@ import {
 
 } from "@mui/icons-material";
 
-const API_BASE_URL = "http://localhost:8080";
+const API_BASE_URL = "https://staffsync-w6wn.onrender.com";
 
 // Send the authenticated session cookie with every backend request.
 const apiFetch = (url, options = {}) =>
@@ -429,7 +429,7 @@ function Employee() {
   // ============================================================
 
   
-const API_BASE_URL = "http://localhost:8080";
+const API_BASE_URL = "https://staffsync-w6wn.onrender.com";
 
 const getProfileImage = (employee) => {
   if (!employee?.id) {

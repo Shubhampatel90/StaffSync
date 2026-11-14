@@ -47,7 +47,7 @@ import {
   PersonAddAlt1,
 } from "@mui/icons-material";
 
-const API_BASE_URL = "http://localhost:8080";
+const API_BASE_URL = "https://staffsync-w6wn.onrender.com";
 
 const COLORS = {
   navy: "#0F2747",

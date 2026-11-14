@@ -43,7 +43,7 @@ import SearchOutlined from "@mui/icons-material/Search";
 import ScheduleOutlined from "@mui/icons-material/ScheduleOutlined";
 import TuneOutlined from "@mui/icons-material/TuneOutlined";
 
-const API_BASE_URL = "http://localhost:8080";
+const API_BASE_URL = "https://staffsync-w6wn.onrender.com";
 
 const COLORS = {
   navy: "#0F2747",
