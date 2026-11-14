@@ -1,0 +1,19 @@
+﻿# Eclipse workspace
+.metadata/
+
+# Database backups and exports
+*-backup.sql
+*-schema.txt
+
+# Java / Maven
+**/target/
+**/build/
+
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+
+# IDE files
+.idea/
+.vscode/
