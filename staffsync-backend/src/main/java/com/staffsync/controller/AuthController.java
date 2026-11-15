@@ -21,7 +21,10 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/admin")
 @CrossOrigin(
-        origins = "http://localhost:5173",
+        origins ={ "http://localhost:5173",
+		"http://127.0.0.1:5173",
+            "https://staffsync-75b.pages.dev"
+},
         allowCredentials = "true"
 )
 public class AuthController {
