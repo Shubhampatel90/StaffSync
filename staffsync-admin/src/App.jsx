@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 // ============================================================
 
 import Login from "./pages/Login";
-import Contact from "./pages/contact";
+import Contact from "./pages/Contact";
 
 // ============================================================
 // ADMIN PAGES
