@@ -697,21 +697,34 @@ const getProfileImage = (employee) => {
 
         : "POST";
 
-      const response = await apiFetch(url, {
+      let response;
 
-        method,
+if (editingEmployee) {
+  // UPDATE: Send JSON
+  response = await apiFetch(url, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+} else {
+  // CREATE: Send multipart/form-data
+  const employeeData = new FormData();
 
-        headers: {
+  employeeData.append(
+    "employee",
+    new Blob(
+      [JSON.stringify(payload)],
+      { type: "application/json" }
+    )
+  );
 
-          "Content-Type":
-
-            "application/json",
-
-        },
-
-        body: JSON.stringify(payload),
-
-      });
+  response = await apiFetch(url, {
+    method: "POST",
+    body: employeeData,
+  });
+}
 
       if (!response.ok) {
 
