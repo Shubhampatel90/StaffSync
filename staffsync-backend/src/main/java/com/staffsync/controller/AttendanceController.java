@@ -11,7 +11,14 @@ import com.staffsync.service.AttendanceService;
 
 @RestController
 @RequestMapping("/api/attendance")
-@CrossOrigin(origins = "*")
+@CrossOrigin(
+	    origins = {
+	        "http://localhost:5173",
+	        "http://127.0.0.1:5173",
+	        "https://staffsync-75b.pages.dev"
+	    },
+	    allowCredentials = "true"
+	)
 public class AttendanceController {
 
     private final AttendanceService attendanceService;

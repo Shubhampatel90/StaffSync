@@ -24,7 +24,14 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/api/admin/reports")
-@CrossOrigin(origins = "*") // tighten this in production
+@CrossOrigin(
+	    origins = {
+	        "http://localhost:5173",
+	        "http://127.0.0.1:5173",
+	        "https://staffsync-75b.pages.dev"
+	    },
+	    allowCredentials = "true"
+	)
 public class ReportsController {
 
     private final ReportService reportService;
